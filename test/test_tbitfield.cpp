@@ -16,7 +16,7 @@ TEST(TBitField, can_get_length)
 
 TEST(TBitField, new_bitfield_is_set_to_zero)
 {
-  TBitField bf(100);
+  TBitField bf(5);
 
   int sum = 0;
   for (int i = 0; i < bf.GetLength(); i++)
@@ -52,7 +52,7 @@ TEST(TBitField, can_clear_bit)
 
 TEST(TBitField, throws_when_create_bitfield_with_negative_length)
 {
-  ASSERT_ANY_THROW(TBitField bf(-3));
+  EXPECT_ANY_THROW(TBitField bf(-3));
 }
 
 TEST(TBitField, throws_when_set_bit_with_negative_index)
